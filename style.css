@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+h1{
+    color: rgb(126, 126, 126);
+}
+p{
+    font-size: 0.8rem;
+    margin: 0.7rem 0rem;
+}
+label{
+    background-color: red;
+    position: relative;
+}
+#passwordViwer{
+    width: 1.5rem;
+    position: fixed;
+    right: 13%;
+    top:31.9%;
+    opacity: 60%;
+}
+img{
+    width: 4rem;
+    margin-bottom: 2rem;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 300px;
+    margin-top: 30%;
+    align-items: center;
+    color: rgb(89, 89, 89);
+}
+#username, #password{
+    padding: 0.7rem;
+    width: 100%;
+    margin-bottom: 0.2rem;
+    border: solid 1px rgb(220, 220, 220);
+    border-radius: 0.2rem;
+    background-color: white;
+    outline: none;
+}
+#loginButton{
+    padding: 0.7rem;
+    width: 100%;
+    margin-top: 0.2rem;
+    background-color: #3897F0;
+    border: none;
+    border-radius: 0.2rem;
+    color: white;
+    outline: none;
+}
+#loginButton:active{
+    background-color: #338bde;
+}
+#orDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+#orP{
+    margin: 0rem 0.8rem;
+    font-weight: 600;
+}
+
+#FBlogin{
+    margin-top: 2rem;
+    color: #3897F0;
+    font-weight: 600;
+}
+#dont{
+    margin-top: 38%;
+}
