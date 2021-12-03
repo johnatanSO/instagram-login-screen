@@ -35,7 +35,7 @@ img{
     align-items: center;
     color: rgb(89, 89, 89);
 }
-#mobileOrEmail, #fullName,#username,#password{
+#email, #fullName,#username,#password{
     padding: 0.7rem;
     width: 100%;
     margin-bottom: 0.2rem;

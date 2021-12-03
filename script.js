@@ -7,33 +7,36 @@ const firebaseConfig = {
     appId: "1:774679228936:web:caf050a1a678e25a5e17bd"
   };
 
-  // Initialize Firebase
+  
   firebase.initializeApp(firebaseConfig)
   const db = firebase.firestore()
+  
+  // Initialize Firebase
 
-  let userID = parseInt(Math.random()*100000000)
 
-  /*   let userSingUp = {
+    let userID = parseInt(Math.random()*100000000)
+
+    let userData = {
         email : document.getElementById('email'),
         fullName : document.getElementById('fullName'),
         username : document.getElementById('username'),
         password : document.getElementById('password'),
-    } */
-    console.log(userID)
+    }//Pegando dados dos inputs
+
 
     function createUser(e){
         e.preventDefault()
-         db.collection('users').add({
-
-            email: document.getElementById('email'),
-            fullName: document.getElementById('fullName'),
-            username: document.getElementById('username'),
-            password: document.getElementById('password'),
-
-        }).then((user)=>{
-            console.log("Usuário cadastrado com sucesso!")
+        db.collection('users').doc(`${userData.username.value} - ${userID}`).set({
+            email: userData.email.value,
+            fullName: userData.fullName.value,
+            username: userData.username.value,
+            password: userData.password.value,
+        })
+        .then((user)=>{
+            console.log('Sucess create acount!')
             console.log(user)
-        }).catch(err=>{console.log(err)})
+        })
+        .catch(err=>{console.log(err)})
     }
    
         
