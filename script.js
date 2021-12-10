@@ -10,6 +10,7 @@ const firebaseConfig = {
   
   firebase.initializeApp(firebaseConfig)
   const db = firebase.firestore()
+  const auth = firebase.auth()
   
   // Initialize Firebase
 
@@ -26,17 +27,20 @@ const firebaseConfig = {
 
     function createUser(e){
         e.preventDefault()
-        db.collection('users').doc(`${userData.username.value} - ${userID}`).set({
-            email: userData.email.value,
-            fullName: userData.fullName.value,
-            username: userData.username.value,
-            password: userData.password.value,
-        })
+        auth.createUserWithEmailAndPassword(userData.email.value, userData.password.value)
         .then((user)=>{
-            console.log('Sucess create acount!')
             console.log(user)
-        })
-        .catch(err=>{console.log(err)})
+
+            db.collection('users').doc(`${userData.username.value} - ${userID}`).set({
+                email: userData.email.value,
+                fullName: userData.fullName.value,
+                username: userData.username.value,
+                password: userData.password.value,
+            })
+            .then(()=>{
+                console.log('Sucess create acount!')
+            }).catch(err=>{console.log(err)})
+        }).catch((err)=>{console.log(err.message)})        
     }
    
         
